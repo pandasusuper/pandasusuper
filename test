@@ -1,0 +1,19 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+	cout<<"请输入一段文本\n";
+	cin.ignore(2);
+	char buff[50];					
+	cin.read(buff,5);				//此时read一定要读到5为止 
+	cout<<buff<<endl;
+	cin.getline(buff,2);			//cin.getcline是覆盖式输入 
+	cout<<buff<<endl;				
+	
+	
+	cin.ignore(1);					//为什么此时cin没办法再等待输入了 
+	cin.read(buff,5);
+	cout<<"您输入的文本字数为:"<<cin.gcount()<<endl;
+	cout.write(buff,2)<<endl;
+}

@@ -16,4 +16,6 @@ int main(){
 	cin.read(buff,5);
 	cout<<"您输入的文本字数为:"<<cin.gcount()<<endl;
 	cout.write(buff,2)<<endl;
+	
+	//test
 }

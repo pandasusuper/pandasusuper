@@ -1,0 +1,42 @@
+//几个问题：第一，函数在main前声明，在main后定义可以吗 ? 答：可以的，但是函数声明的返回类型和函数参数要写清楚，因为c++有重载的特点 
+
+#include<iostream>
+using namespace std;
+const int n=10;
+int sum(int ints[]);
+double avg(int ints[]);
+
+
+int main(){
+	int ints[n];
+	int i=0;
+	while(cin>>ints[i]){
+		while(cin.peek()==' '){
+			cin.get();
+		}
+		if(cin.peek()=='\n'){
+			break;
+		}
+		i++;
+	}
+	cout<<sum(ints)<<endl;
+	cout<<avg(ints)<<endl;
+}
+
+int sum(int *ints){			//int (* ints)[n]     可以用int * name 来代表数组 
+	int sum=0;
+	for(int i=0;i<n;i++){
+		sum+=ints[i];
+	}
+	return sum;
+}
+
+double avg(int *ints){			//int (* ints)[n]
+	double avg=0;
+	int sum=0;
+	for(int i=0;i<n;i++){
+		sum+=ints[i];
+	}
+	avg=1.0*sum/n;
+	return avg;
+}
